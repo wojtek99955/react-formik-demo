@@ -1,8 +1,46 @@
 import { useFormik } from "formik";
 import styled from "styled-components";
+import { User } from "@styled-icons/boxicons-solid/User";
 
-const Main = styled.main``;
-const StyledForm = styled.form``;
+const Main = styled.main`
+  background: white;
+  padding: 2rem;
+  position: relative;
+`;
+const StyledForm = styled.form`
+  label {
+    display: block;
+  }
+  button {
+    display: block;
+  }
+  input {
+    background-color: #ebf4f2;
+    border: none;
+  }
+`;
+const UserContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -10%;
+  border-radius: 50%;
+  background: rgb(151, 122, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(151, 122, 255, 1) 19%,
+    rgba(191, 123, 249, 1) 100%
+  );
+`;
+const StyledUser = styled(User)`
+  width: 2rem;
+  color: #f8e4ff;
+`;
+
 function Form() {
   const formik = useFormik({
     initialValues: {
@@ -17,6 +55,9 @@ function Form() {
   });
   return (
     <Main>
+      <UserContainer>
+        <StyledUser />
+      </UserContainer>
       <StyledForm onSubmit={formik.handleSubmit}>
         <label htmlFor="name">Name</label>
         <input
