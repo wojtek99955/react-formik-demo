@@ -64,6 +64,9 @@ const StyledUser = styled(User)`
   width: 2rem;
   color: #f8e4ff;
 `;
+const ValidateError = styled.div`
+  color: red;
+`;
 
 function Form() {
   const validationSchema = Yup.object({
@@ -100,7 +103,7 @@ function Form() {
           onChange={formik.handleChange}
           value={formik.values.name}
         />
-        {formik.errors.name}
+        <ValidateError>{formik.errors.name}</ValidateError>
         <label htmlFor="surname">Surname</label>
         <input
           id="surname"
@@ -109,7 +112,7 @@ function Form() {
           onChange={formik.handleChange}
           value={formik.values.surname}
         />
-        {formik.errors.surname}
+        <ValidateError>{formik.errors.surname}</ValidateError>
         <label htmlFor="email">Email</label>
         <input
           id="email"
@@ -118,7 +121,7 @@ function Form() {
           onChange={formik.handleChange}
           value={formik.values.email}
         />
-        {formik.errors.email}
+        <ValidateError>{formik.errors.email}</ValidateError>
         <label htmlFor="password">Password</label>
         <input
           id="password"
@@ -127,7 +130,7 @@ function Form() {
           onChange={formik.handleChange}
           value={formik.values.password}
         />
-        {formik.errors.password}
+        <ValidateError>{formik.errors.password}</ValidateError>
         <button type="submit">Create Account</button>
       </StyledForm>
     </Main>
