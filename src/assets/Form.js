@@ -100,6 +100,7 @@ function Form() {
           onChange={formik.handleChange}
           value={formik.values.name}
         />
+        {formik.errors.name}
         <label htmlFor="surname">Surname</label>
         <input
           id="surname"
@@ -108,6 +109,7 @@ function Form() {
           onChange={formik.handleChange}
           value={formik.values.surname}
         />
+        {formik.errors.surname}
         <label htmlFor="email">Email</label>
         <input
           id="email"
@@ -116,6 +118,7 @@ function Form() {
           onChange={formik.handleChange}
           value={formik.values.email}
         />
+        {formik.errors.email}
         <label htmlFor="password">Password</label>
         <input
           id="password"
@@ -124,6 +127,7 @@ function Form() {
           onChange={formik.handleChange}
           value={formik.values.password}
         />
+        {formik.errors.password}
         <button type="submit">Create Account</button>
       </StyledForm>
     </Main>
