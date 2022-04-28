@@ -70,7 +70,9 @@ const ValidateError = styled.div`
 
 function Form() {
   const validationSchema = Yup.object({
-    name: Yup.string().required("required"),
+    name: Yup.string()
+      .required("required")
+      .min(3, "must be 3 characters or more"),
     surname: Yup.string().required("required"),
     email: Yup.string().email("invalid email format").required("required"),
     password: Yup.string()
