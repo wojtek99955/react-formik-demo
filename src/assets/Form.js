@@ -23,11 +23,12 @@ const UserContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
+  width: 2.8rem;
+  height: 2.8rem;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: -10%;
+  top: -1.4rem;
   border-radius: 50%;
   background: rgb(151, 122, 255);
   background: linear-gradient(
