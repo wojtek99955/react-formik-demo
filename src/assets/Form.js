@@ -25,7 +25,7 @@ const StyledForm = styled.form`
     margin-top: 1rem;
     padding: 0.7rem 1.2rem;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 12px;
     background: rgb(151, 122, 255);
     background: linear-gradient(
       90deg,
