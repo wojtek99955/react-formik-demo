@@ -6,7 +6,7 @@ Form created with formik
 
 ## Live
 
-Link:
+Link: https://wojtekk-formik-demo.netlify.app/
 
 ## Technologies
 
