@@ -73,7 +73,9 @@ function Form() {
     name: Yup.string()
       .required("required")
       .min(3, "must be 3 characters or more"),
-    surname: Yup.string().required("required"),
+    surname: Yup.string()
+      .required("required")
+      .min(3, "must be 3 characters or more"),
     email: Yup.string().email("invalid email format").required("required"),
     password: Yup.string()
       .min(6, "must be 6 characters or more")
