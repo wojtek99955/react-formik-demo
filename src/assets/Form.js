@@ -1,6 +1,7 @@
 import { useFormik } from "formik";
 import styled from "styled-components";
 import { User } from "@styled-icons/boxicons-solid/User";
+import * as Yup from "yup";
 
 const Main = styled.main`
   background: white;
@@ -65,6 +66,14 @@ const StyledUser = styled(User)`
 `;
 
 function Form() {
+  const validationSchema = Yup.object({
+    name: Yup.string().required("required"),
+    surname: Yup.string().required("required"),
+    email: Yup.string().email("invalid email format").required("required"),
+    password: Yup.string()
+      .min(6, "must be 6 characters or more")
+      .required("required"),
+  });
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -75,6 +84,7 @@ function Form() {
     onSubmit: (values) => {
       console.log(values);
     },
+    validationSchema,
   });
   return (
     <Main>
