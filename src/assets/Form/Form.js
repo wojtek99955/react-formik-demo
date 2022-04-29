@@ -68,7 +68,7 @@ function Form() {
         <input
           id="email"
           name="email"
-          type="email"
+          type="text"
           {...formik.getFieldProps("email")}
         />
         <ValidateError>
