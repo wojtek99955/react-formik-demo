@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import styled from "styled-components";
 import { User } from "@styled-icons/boxicons-solid/User";
 import * as Yup from "yup";
+import { useState } from "react";
 
 const Main = styled.main`
   background: white;
@@ -68,7 +69,13 @@ const ValidateError = styled.div`
   color: red;
 `;
 
+const SuccessMessage = styled.h3`
+  color: green;
+  font-size: 1.5rem;
+`;
+
 function Form() {
+  const [success, setSuccess] = useState(false);
   const validationSchema = Yup.object({
     name: Yup.string()
       .required("required")
@@ -90,6 +97,7 @@ function Form() {
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
+      !formik.error ? setSuccess(true) : setSuccess(false);
     },
     validationSchema,
   });
@@ -149,6 +157,7 @@ function Form() {
           {formik.touched.password && formik.errors.password}
         </ValidateError>
         <button type="submit">Create Account</button>
+        {success ? <SuccessMessage>Send</SuccessMessage> : null}
       </StyledForm>
     </Main>
   );
