@@ -93,6 +93,7 @@ function Form() {
     },
     validationSchema,
   });
+  console.log(formik.touched);
   return (
     <Main>
       <UserContainer>
@@ -105,36 +106,48 @@ function Form() {
           name="name"
           type="text"
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           value={formik.values.name}
         />
-        <ValidateError>{formik.errors.name}</ValidateError>
+        <ValidateError>
+          {formik.touched.name && formik.errors.name}
+        </ValidateError>
         <label htmlFor="surname">Surname</label>
         <input
           id="surname"
           name="surname"
           type="text"
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           value={formik.values.surname}
         />
-        <ValidateError>{formik.errors.surname}</ValidateError>
+        <ValidateError>
+          {formik.touched.surname && formik.errors.surname}
+        </ValidateError>
         <label htmlFor="email">Email</label>
         <input
           id="email"
           name="email"
           type="email"
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           value={formik.values.email}
         />
-        <ValidateError>{formik.errors.email}</ValidateError>
+        <ValidateError>
+          {formik.touched.email && formik.errors.email}
+        </ValidateError>
         <label htmlFor="password">Password</label>
         <input
           id="password"
           name="password"
           type="password"
           onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           value={formik.values.password}
         />
-        <ValidateError>{formik.errors.password}</ValidateError>
+        <ValidateError>
+          {formik.touched.password && formik.errors.password}
+        </ValidateError>
         <button type="submit">Create Account</button>
       </StyledForm>
     </Main>
