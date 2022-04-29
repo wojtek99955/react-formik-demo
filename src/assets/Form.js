@@ -71,7 +71,7 @@ const ValidateError = styled.div`
 
 const SuccessMessage = styled.h3`
   color: green;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 `;
 
 function Form() {
@@ -157,7 +157,9 @@ function Form() {
           {formik.touched.password && formik.errors.password}
         </ValidateError>
         <button type="submit">Create Account</button>
-        {success ? <SuccessMessage>Send</SuccessMessage> : null}
+        {success ? (
+          <SuccessMessage>Your message is sent!</SuccessMessage>
+        ) : null}
       </StyledForm>
     </Main>
   );
