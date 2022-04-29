@@ -37,7 +37,7 @@ function Form() {
     },
     validationSchema,
   });
-  console.log(formik.touched);
+
   return (
     <Main>
       <UserContainer>

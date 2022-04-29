@@ -64,6 +64,7 @@ export const StyledUser = styled(User)`
 `;
 export const ValidateError = styled.div`
   color: red;
+  font-size: 0.8rem;
 `;
 
 export const SuccessMessage = styled.h3`
