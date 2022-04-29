@@ -89,7 +89,7 @@ function Form() {
       password: "",
     },
     onSubmit: (values) => {
-      console.log(values);
+      alert(JSON.stringify(values, null, 2));
     },
     validationSchema,
   });
