@@ -23,6 +23,10 @@ function Form() {
     password: Yup.string()
       .min(8, "must be 6 characters or more")
       .required("required"),
+    confirmPassword: Yup.string().oneOf(
+      [Yup.ref("password"), null],
+      "password must match"
+    ),
   });
   const formik = useFormik({
     initialValues: {
@@ -30,6 +34,7 @@ function Form() {
       surname: "",
       email: "",
       password: "",
+      confirmPassword: "",
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
@@ -83,6 +88,16 @@ function Form() {
         />
         <ValidateError>
           {formik.touched.password && formik.errors.password}
+        </ValidateError>
+        <label htmlFor="confirmPassword">Confirm Password</label>
+        <input
+          id="confirmPassword"
+          name="confirmPassword"
+          type="password"
+          {...formik.getFieldProps("confirmPassword")}
+        />
+        <ValidateError>
+          {formik.touched.confirmPassword && formik.errors.confirmPassword}
         </ValidateError>
         <button type="submit">Create Account</button>
         {success ? (
