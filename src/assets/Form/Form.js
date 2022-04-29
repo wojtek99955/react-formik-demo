@@ -36,9 +36,10 @@ function Form() {
       password: "",
       confirmPassword: "",
     },
-    onSubmit: (values) => {
+    onSubmit: (values, onSubmitProps) => {
       alert(JSON.stringify(values, null, 2));
       !formik.error ? setSuccess(true) : setSuccess(false);
+      onSubmitProps.resetForm();
     },
     validationSchema,
   });
