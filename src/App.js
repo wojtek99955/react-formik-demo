@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Form from "./assets/Form";
+import Form from "./assets/Form/Form";
 
 const Container = styled.section`
   background-color: #ebf4f2;
