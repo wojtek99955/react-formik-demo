@@ -71,7 +71,8 @@ const ValidateError = styled.div`
 
 const SuccessMessage = styled.h3`
   color: green;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  margin-top: 1rem;
 `;
 
 function Form() {
@@ -113,9 +114,7 @@ function Form() {
           id="name"
           name="name"
           type="text"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.name}
+          {...formik.getFieldProps("name")}
         />
         <ValidateError>
           {formik.touched.name && formik.errors.name}
@@ -125,9 +124,7 @@ function Form() {
           id="surname"
           name="surname"
           type="text"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.surname}
+          {...formik.getFieldProps("surname")}
         />
         <ValidateError>
           {formik.touched.surname && formik.errors.surname}
@@ -137,9 +134,7 @@ function Form() {
           id="email"
           name="email"
           type="email"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.email}
+          {...formik.getFieldProps("email")}
         />
         <ValidateError>
           {formik.touched.email && formik.errors.email}
@@ -149,9 +144,7 @@ function Form() {
           id="password"
           name="password"
           type="password"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.password}
+          {...formik.getFieldProps("password")}
         />
         <ValidateError>
           {formik.touched.password && formik.errors.password}
