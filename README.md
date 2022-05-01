@@ -12,7 +12,7 @@ Link: https://wojtekk-formik-demo.netlify.app/
 
 - reactjs
 - styled-components
-- fornik
+- formik
 
 ## Installation
 
